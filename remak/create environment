@@ -32,3 +32,9 @@
  https://zhuanlan.zhihu.com/p/20367175
  https://zhuanlan.zhihu.com/p/20397902
  https://zhuanlan.zhihu.com/p/20522487
+
+
+
+
+ 加载react-router
+ $ npm install -S react-router

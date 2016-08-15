@@ -1,24 +1,43 @@
 //import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router, Route, Link, browserHistory} from 'react-router';
 
 
-class App extends React.Component{
-    constructor() {
-        super();
-    }
-    render() {
-        //JSX here!
+
+const App = React.createClass({
+    render(){
         return (
-            <div className="container">
-                <section className="jumbotron">
-                    <h3 className="jumbotron-heading">Search Github Users</h3>
-                </section>
-            </div>
+            <div>app</div>
         )
     }
-};
+})
+
+const About = React.createClass({
+    render(){
+        return (
+            <div>about</div>
+        )
+    }
+})
+
+const NoMatch = React.createClass({
+    render(){
+        return (
+            <div>no macth</div>
+        )
+
+    }
+})
 
 const app = document.createElement('div');
 document.body.appendChild(app);
-ReactDOM.render(<App />, app);
+
+
+ReactDOM.render((
+    <Router>
+        <Route path="/" component={App}/>
+        <Route path="/about" component={About}/>
+        <Route path="/*" component={NoMatch}/>
+    </Router>
+), app)
